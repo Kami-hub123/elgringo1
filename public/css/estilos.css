@@ -1,0 +1,61 @@
+/* ==========================================================
+   css/estilos.css
+   ========================================================== */
+:root {                      /* TEMA CLARO (principal) */
+  --fondo: 255 255 255;
+  --papel: 236 242 250;
+  --borde: 208 220 236;
+  --tinta: 15 23 42;
+  --suave: 100 116 139;
+}
+.dark {                      /* TEMA OSCURO (boton del foco) */
+  --fondo: 10 14 24;
+  --papel: 18 26 42;
+  --borde: 38 50 74;
+  --tinta: 241 245 249;
+  --suave: 148 163 184;
+}
+.tema-oscuro {               /* Zonas azules: banner y pie de página */
+  --fondo: 8 14 40;
+  --papel: 16 26 66;
+  --borde: 44 58 110;
+  --tinta: 255 255 255;
+  --suave: 196 206 235;
+}
+
+html { scroll-behavior: smooth; -webkit-tap-highlight-color: transparent; }
+body { background: rgb(var(--fondo)); color: rgb(var(--tinta)); transition: background .25s, color .25s; }
+section[id] { scroll-margin-top: 110px; }
+
+/* Fondo azul del banner y del pie: brillos + puntos */
+.hero-azul {
+  background-color: #0B1FA3;
+  background-image:
+    radial-gradient(circle at 85% 15%, rgba(91,177,227,.45), transparent 45%),
+    radial-gradient(circle at 5% 95%, rgba(228,22,58,.25), transparent 40%),
+    radial-gradient(rgba(255,255,255,.08) 1.5px, transparent 1.5px);
+  background-size: auto, auto, 26px 26px;
+}
+
+/* Etiqueta rosada del banner */
+.etiqueta { background: #E9A8C6; border-radius: 10px; border: 3px dashed rgba(11,27,51,.35); }
+
+/* Quita la barra de desplazamiento de las categorías */
+.sin-barra { scrollbar-width: none; }
+.sin-barra::-webkit-scrollbar { display: none; }
+
+/* Sombra suave en tarjetas */
+.stat, #servicios article { box-shadow: 0 8px 22px -14px rgba(15,23,42,.35); }
+
+/* Aparición suave al hacer scroll (la activa js/app.js) */
+.revelar { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+.revelar.visible { opacity: 1; transform: translateY(0); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+/* Barrita de color bajo los titulos de seccion */
+.titulo-sec::after { content: ""; display: block; width: 56px; height: 4px; margin-top: 10px; border-radius: 4px; background: #2E90D0; }
+.titulo-sec.text-center::after { margin-inline: auto; }

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>JC El Gringo | Repuestos originales Bajaj y servicio técnico</title>
+  <meta name="description" content="Servicio técnico autorizado por Crosland Automotriz. Repuestos 100% originales Bajaj para Torito. Consulta por WhatsApp." />
+  <meta name="theme-color" content="#1B2FC4" />
+  <script>try{if(localStorage.getItem("tema")==="oscuro")document.documentElement.classList.add("dark")}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,500;0,600;0,700;1,700;1,800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          fondo: 'rgb(var(--fondo) / <alpha-value>)', papel: 'rgb(var(--papel) / <alpha-value>)',
+          borde: 'rgb(var(--borde) / <alpha-value>)', tinta: 'rgb(var(--tinta) / <alpha-value>)',
+          suave: 'rgb(var(--suave) / <alpha-value>)',
+          carbon: '#0B1B33',
+          marca:  { DEFAULT: '#1B2FC4', oscuro: '#0B1FA3' },
+          acento: { DEFAULT: '#2E90D0', claro: '#5BB1E3', oscuro: '#1F78B4' },
+          wa:     { DEFAULT: '#25D366', oscuro: '#1EB958' }
+        },
+        fontFamily: { titulo: ['Kanit', 'Impact', 'sans-serif'], texto: ['Inter', 'system-ui', 'sans-serif'] }
+      } }
+    };
+  </script>
+  <link rel="stylesheet" href="css/estilos.css" />
+</head>
+<body class="bg-fondo font-texto text-tinta antialiased">
+  <app-root></app-root>
+</body>
+</html>

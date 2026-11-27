@@ -1,0 +1,484 @@
+<a href="#contenido" class="sr-only focus:not-sr-only focus:fixed focus:left-2 focus:top-2 focus:z-[100] focus:rounded focus:bg-acento focus:px-4 focus:py-2 focus:text-white">
+  Saltar al contenido
+</a>
+
+<!-- ===================== HEADER ESTILO REFERENCIA ===================== -->
+<header class="sticky top-0 z-40 border-b border-borde bg-papel/95 backdrop-blur">
+  <div class="mx-auto max-w-6xl px-4">
+    <!-- Fila superior: Logo MJCG | MULTISERVICIOS JC EL GRINGO | Íconos + Foquito + Admin -->
+    <div class="relative flex min-h-[68px] items-center justify-between gap-3 py-2">
+      <a routerLink="/" class="flex items-center">
+        <img
+          src="images/logos/logojc.png"
+          alt="Logo Multiservicios JC El Gringo"
+          class="h-12 w-auto object-contain sm:h-14"
+          onerror="this.style.display='none'"
+        />
+      </a>
+
+      <!-- Título centrado -->
+      <a routerLink="/" class="text-center leading-none">
+        <span class="block font-titulo text-lg font-extrabold uppercase italic tracking-wide text-tinta sm:text-2xl">
+          MULTISERVICIOS <span class="text-acento">JC</span> EL GRINGO
+        </span>
+        <span class="mt-1 block text-[10px] font-bold uppercase tracking-[0.25em] text-suave">
+          REPUESTOS <span class="mx-1 text-borde">|</span> SERVICIO
+        </span>
+      </a>
+
+      <!-- Íconos derecha + Foquito + enlace Admin -->
+      <div class="flex items-center gap-2.5 text-tinta sm:gap-3">
+        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube" class="hidden p-1 hover:text-acento sm:inline-flex">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31.4 31.4 0 0 0 0 12a31.4 31.4 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31.4 31.4 0 0 0 24 12a31.4 31.4 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.3 3.6-6.3 3.6Z"/></svg>
+        </a>
+        <a href="https://www.tiktok.com" target="_blank" rel="noopener" aria-label="TikTok" class="hidden p-1 hover:text-acento sm:inline-flex">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M19.6 6.4a4.8 4.8 0 0 1-3.8-3.8V2h-3.4v13.6a2.8 2.8 0 1 1-2.8-2.8c.3 0 .6 0 .9.1V9.5a6.2 6.2 0 1 0 5.3 6.1V8.6a8.2 8.2 0 0 0 4.8 1.5V6.7c-.3 0-.7-.1-1-.3Z"/></svg>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook" class="hidden p-1 hover:text-acento sm:inline-flex">
+          <svg class="h-4 w-4 fill-current" viewBox="0 0 24 24"><path d="M14 13.5h2.5l1-4H14v-2c0-1.03 0-2 2-2h1.5V2.14c-.326-.043-1.557-.14-2.857-.14C11.928 2 10 3.657 10 6.7v2.8H7v4h3V22h4v-8.5Z"/></svg>
+        </a>
+        <a href="#buscar" aria-label="Buscar" class="hidden p-1 hover:text-acento sm:inline-flex">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.35-4.35"/></svg>
+        </a>
+        <button
+          type="button"
+          (click)="alternarTema()"
+          [attr.aria-label]="modoOscuro ? 'Activar tema claro' : 'Activar tema oscuro'"
+          [title]="modoOscuro ? 'Tema claro' : 'Tema oscuro'"
+          class="inline-flex p-1 hover:text-acento"
+        >
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2.2" viewBox="0 0 24 24">
+            <path d="M9 18h6M10 22h4M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+          </svg>
+        </button>
+        <a routerLink="/login" class="rounded-md bg-marca px-2.5 py-1 font-titulo text-xs font-bold uppercase tracking-wider text-white transition hover:bg-marca-oscuro">
+          Admin
+        </a>
+      </div>
+    </div>
+
+    <!-- Fila inferior: Navegación horizontal -->
+    <nav aria-label="Navegación principal" class="flex items-center justify-center gap-4 overflow-x-auto border-t border-borde/60 py-2 text-[11px] font-bold uppercase tracking-wider text-tinta sm:gap-7 sm:text-xs">
+      <a href="#inicio" class="whitespace-nowrap hover:text-acento">Inicio</a>
+      <a href="#repuestos" class="whitespace-nowrap hover:text-acento">Repuestos</a>
+      <a href="#promociones" class="whitespace-nowrap hover:text-acento">Ofertas</a>
+      <a href="#servicios" class="whitespace-nowrap hover:text-acento">Servicios</a>
+      <a href="#nosotros" class="whitespace-nowrap hover:text-acento">Nosotros</a>
+      <a href="#nosotros" class="whitespace-nowrap hover:text-acento">Equipo</a>
+      <a href="#contacto" class="whitespace-nowrap hover:text-acento">Contacto</a>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+  <!-- ===================== HERO ===================== -->
+  <section id="inicio" class="tema-oscuro hero-azul relative overflow-hidden text-white">
+    <img
+      src="images/hero/banner-principal.jpeg"
+      alt="Unidades en la calle"
+      class="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-50"
+      aria-hidden="true"
+    />
+    <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-marca/60 via-marca/50 to-carbon/70" aria-hidden="true"></div>
+
+    <div class="pointer-events-none absolute -right-24 -top-24 h-96 w-96 rounded-full border-[48px] border-white/5" aria-hidden="true"></div>
+    <div class="pointer-events-none absolute -bottom-32 -left-20 h-80 w-80 rounded-full border-[40px] border-white/5" aria-hidden="true"></div>
+    <p class="pointer-events-none absolute left-1/2 top-2 -translate-x-1/2 select-none whitespace-nowrap font-titulo text-[8rem] font-extrabold italic leading-none text-white/[0.06] md:text-[14rem]" aria-hidden="true">
+      BAJAJ
+    </p>
+
+    <div class="relative mx-auto grid max-w-6xl items-center gap-10 px-5 pb-8 pt-10 md:grid-cols-2 md:pt-14">
+      <div class="relative mx-auto w-full max-w-sm py-10">
+        <div class="absolute left-1/2 top-1/2 h-80 w-80 -translate-x-1/2 -translate-y-1/2 rounded-full bg-acento/30 blur-2xl md:h-96 md:w-96" aria-hidden="true"></div>
+        <div class="absolute left-1/2 top-1/2 h-64 w-64 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#E4163A] md:h-72 md:w-72" aria-hidden="true"></div>
+
+        <div class="etiqueta relative z-[1] -rotate-6 rounded-xl bg-[#F9A8C9] p-6 text-carbon shadow-2xl">
+          <span class="inline-flex items-center rounded-md bg-[#0760C4] px-3 py-1.5">
+            <img
+              src="images/logos/bajaj-blanco.png"
+              alt="Bajaj"
+              class="h-8 w-auto brightness-0 invert"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"
+            />
+            <span style="display:none" class="font-titulo text-2xl font-extrabold italic leading-none tracking-wider text-white sm:text-3xl">
+              BAJAJ
+            </span>
+          </span>
+          <p class="mt-4 font-titulo text-3xl font-extrabold uppercase italic leading-none">Repuesto 100% original</p>
+          <p class="mt-2 text-sm font-semibold">Etiqueta rosada · Para todos los modelos de Torito</p>
+          <p class="mt-3 border-t-2 border-dashed border-carbon/40 pt-2 font-mono text-xs">AA111092 · MOTOR STARTER ASSY</p>
+        </div>
+
+        <span class="absolute right-1 top-3 z-10 rotate-6 rounded-full bg-white px-4 py-1.5 font-titulo text-xs font-bold uppercase italic text-marca shadow-lg sm:text-sm">
+          Original
+        </span>
+        <span class="absolute bottom-3 left-1 z-10 -rotate-3 rounded-full bg-acento px-4 py-1.5 font-titulo text-xs font-bold uppercase italic text-white shadow-lg sm:text-sm">
+          Todos los Torito
+        </span>
+      </div>
+
+      <div>
+        <p class="font-titulo text-lg font-bold uppercase italic tracking-wide text-acento-claro">Repuestos originales Bajaj</p>
+        <h1 class="mt-2 font-titulo text-[42px] font-extrabold uppercase italic leading-[1.02] sm:text-6xl">
+          Todo lo que necesitas <span class="text-acento-claro">en un solo lugar</span>
+        </h1>
+        <p class="mt-4 max-w-lg text-base text-white/90 sm:text-lg">
+          Servicio técnico autorizado por Crosland Automotriz. Mira el stock con su precio y escríbenos por WhatsApp para separarlo.
+        </p>
+        <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a href="#repuestos" class="inline-flex min-h-[52px] items-center justify-center rounded-lg bg-acento px-7 font-titulo text-lg font-semibold uppercase tracking-wide text-white transition hover:bg-acento-oscuro active:scale-[0.97]">
+            Ver repuestos
+          </a>
+          <a
+            href="https://wa.me/51931291489?text=Hola%20JC%20El%20Gringo%2C%20quisiera%20cotizar%20un%20repuesto%20o%20servicio."
+            target="_blank"
+            rel="noopener"
+            class="inline-flex min-h-[52px] items-center justify-center rounded-lg bg-wa px-7 font-titulo text-lg font-semibold uppercase tracking-wide text-carbon transition hover:bg-wa-oscuro active:scale-[0.97]"
+          >
+            Cotizar por WhatsApp
+          </a>
+        </div>
+        <p class="mt-6 inline-flex items-center gap-2 rounded-full bg-[#E4163A] px-4 py-2 font-titulo text-sm font-semibold uppercase italic tracking-wide text-white">
+          Servicio técnico autorizado · Mantenimiento y reparación
+        </p>
+      </div>
+    </div>
+
+    <div class="relative mx-auto max-w-6xl px-5 pb-10">
+      <div class="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex items-start gap-3 rounded-2xl border border-white/20 bg-white/10 p-3.5 backdrop-blur">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-acento text-white">✓</span>
+          <div class="min-w-0">
+            <p class="font-titulo text-sm font-bold uppercase sm:text-base">Etiqueta rosada</p>
+            <p class="text-xs text-white/85 sm:text-sm">Repuestos 100% originales Bajaj</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl border border-white/20 bg-white/10 p-3.5 backdrop-blur">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-acento text-white">🔧</span>
+          <div class="min-w-0">
+            <p class="font-titulo text-sm font-bold uppercase sm:text-base">Servicio autorizado</p>
+            <p class="text-xs text-white/85 sm:text-sm">Taller con respaldo de Crosland Automotriz</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl border border-white/20 bg-white/10 p-3.5 backdrop-blur">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-acento text-white">💬</span>
+          <div class="min-w-0">
+            <p class="font-titulo text-sm font-bold uppercase sm:text-base">Respuesta rápida</p>
+            <p class="text-xs text-white/85 sm:text-sm">Cotiza y separa por WhatsApp</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-3 rounded-2xl border border-white/20 bg-white/10 p-3.5 backdrop-blur">
+          <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-acento text-white">🏷️</span>
+          <div class="min-w-0">
+            <p class="font-titulo text-sm font-bold uppercase sm:text-base">Todos los Torito</p>
+            <p class="text-xs text-white/85 sm:text-sm">Compatibilidad para cada modelo</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== BUSCADOR + CATEGORÍAS ===================== -->
+  <section id="buscar" class="mx-4 my-10 rounded-3xl border border-borde bg-papel px-5 py-10 shadow-sm md:mx-auto md:max-w-3xl md:px-10">
+    <h2 class="titulo-sec text-center font-titulo text-3xl font-extrabold uppercase italic md:text-4xl">
+      Encuentra tus repuestos originales
+    </h2>
+    <div class="mt-6">
+      <form (submit)="onBuscar($event)" role="search" class="flex overflow-hidden rounded-lg border-2 border-tinta bg-fondo">
+        <label for="buscador" class="sr-only">Buscar repuesto</label>
+        <input
+          id="buscador"
+          type="search"
+          [(ngModel)]="busqueda"
+          (ngModelChange)="onInputBuscar()"
+          name="busqueda"
+          autocomplete="off"
+          placeholder="Busca por repuesto, código…"
+          class="h-14 min-w-0 flex-1 bg-transparent px-4 text-base outline-none placeholder:text-suave"
+        />
+        <button type="submit" class="bg-acento px-5 font-titulo text-base font-semibold uppercase tracking-wide text-white hover:bg-acento-oscuro sm:px-8">
+          Buscar
+        </button>
+      </form>
+    </div>
+
+    @if (categorias$ | async; as categorias) {
+      <p class="mt-8 text-xs font-bold uppercase tracking-wide">Categorías principales:</p>
+      <div class="sin-barra mt-3 flex gap-2 overflow-x-auto pb-2">
+        @for (cat of categorias; track cat) {
+          <button
+            type="button"
+            (click)="seleccionarCategoria(cat)"
+            [class]="categoriaSeleccionada === cat
+              ? 'shrink-0 rounded-full bg-acento px-4 py-1.5 text-xs font-bold uppercase text-white'
+              : 'shrink-0 rounded-full border border-borde bg-fondo px-4 py-1.5 text-xs font-semibold uppercase text-tinta hover:border-acento'"
+          >
+            {{ cat }}
+          </button>
+        }
+      </div>
+    }
+    <div class="h-1.5 overflow-hidden rounded-full bg-borde" aria-hidden="true">
+      <div class="h-full rounded-full bg-acento" style="width:30%"></div>
+    </div>
+  </section>
+
+  <!-- ===================== REPUESTOS (FIRESTORE) ===================== -->
+  <section id="repuestos" class="mx-auto max-w-6xl px-4 pb-14">
+    <div class="flex items-center justify-between gap-4">
+      <h2 class="titulo-sec font-titulo text-2xl font-bold md:text-3xl">Repuestos para Torito Bajaj</h2>
+      <a routerLink="/login" class="shrink-0 rounded-xl bg-acento px-5 py-3 font-titulo text-sm font-semibold text-white hover:bg-acento-oscuro">
+        Gestionar stock
+      </a>
+    </div>
+
+    @if (productosFiltrados$ | async; as productos) {
+      @if (productos.length === 0) {
+        <p class="mt-6 rounded-2xl border border-borde bg-papel p-6 text-center text-suave">
+          No hay repuestos registrados aún en Firestore (o no coinciden con tu búsqueda). Entra a <strong>Admin</strong> para agregar tu primer repuesto.
+        </p>
+      } @else {
+        <div class="mt-6 grid grid-cols-1 gap-4 min-[500px]:grid-cols-2 lg:grid-cols-4">
+          @for (item of productos; track item.id) {
+            <article class="flex flex-col justify-between overflow-hidden rounded-2xl border border-borde bg-papel shadow-sm">
+              <div>
+                <img
+                  [src]="item.imagenUrl || 'images/logos/logojc.png'"
+                  [alt]="item.nombre"
+                  class="h-44 w-full object-cover"
+                  onerror="this.src='images/logos/logojc.png'"
+                />
+                <div class="p-4">
+                  <span class="text-xs font-bold uppercase text-acento">{{ item.categoria }}</span>
+                  <h3 class="mt-1 font-titulo text-lg font-bold leading-snug">{{ item.nombre }}</h3>
+                  @if (item.descripcion) {
+                    <p class="mt-1 line-clamp-2 text-xs text-suave">{{ item.descripcion }}</p>
+                  }
+                </div>
+              </div>
+              <div class="border-t border-borde px-4 py-3">
+                <div class="flex items-center justify-between">
+                  <span class="text-lg font-extrabold text-marca">S/ {{ item.precio }}</span>
+                  <span class="text-xs text-suave">Stock: {{ item.stock }}</span>
+                </div>
+                <a
+                  [href]="'https://wa.me/51931291489?text=Hola%2C%20quisiera%20consultar%20por%20' + item.nombre"
+                  target="_blank"
+                  rel="noopener"
+                  class="mt-3 flex w-full items-center justify-center rounded-lg bg-wa py-2 font-titulo text-xs font-bold uppercase text-carbon hover:bg-wa-oscuro"
+                >
+                  Consultar por WhatsApp
+                </a>
+              </div>
+            </article>
+          }
+        </div>
+      }
+    }
+  </section>
+
+  <!-- ========== NÚMEROS QUE DAN CONFIANZA ========== -->
+  <section class="mx-auto max-w-6xl px-4 pb-12">
+    <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
+      <div class="stat rounded-2xl border border-borde bg-papel px-4 py-6 text-center">
+        <p class="font-titulo text-5xl font-extrabold text-acento">2022</p>
+        <p class="mt-1 text-sm uppercase tracking-wide text-suave">Año de fundación</p>
+      </div>
+      <div class="stat rounded-2xl border border-borde bg-papel px-4 py-6 text-center">
+        <p class="font-titulo text-5xl font-extrabold text-acento">100%</p>
+        <p class="mt-1 text-sm uppercase tracking-wide text-suave">Repuestos originales Bajaj</p>
+      </div>
+      <div class="stat rounded-2xl border border-borde bg-papel px-4 py-6 text-center">
+        <p class="font-titulo text-5xl font-extrabold text-acento">Crosland</p>
+        <p class="mt-1 text-sm uppercase tracking-wide text-suave">Servicio técnico autorizado</p>
+      </div>
+      <div class="stat rounded-2xl border border-borde bg-papel px-4 py-6 text-center">
+        <p class="font-titulo text-5xl font-extrabold text-acento">8</p>
+        <p class="mt-1 text-sm uppercase tracking-wide text-suave">Servicios en un solo lugar</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DATOS DE CONTACTO RÁPIDO ========== -->
+  <section class="border-b border-borde bg-papel">
+    <div class="mx-auto grid max-w-6xl divide-y divide-borde md:grid-cols-3 md:divide-x md:divide-y-0">
+      <a href="https://www.google.com/maps/search/?api=1&query=Av+Via+los+Libertadores+2881+Ayacucho" target="_blank" rel="noopener" class="flex items-start gap-4 bg-papel p-5 transition hover:bg-fondo">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-acento text-carbon">📍</span>
+        <span>
+          <span class="block font-titulo text-xl font-bold uppercase text-acento">Ubicación</span>
+          <span class="text-sm text-suave">Av. Vía los Libertadores Pisco Tambo Nro 2881, Ayacucho, Huamanga</span>
+        </span>
+      </a>
+      <a href="tel:+51066616558" class="flex items-start gap-4 bg-papel p-5 transition hover:bg-fondo">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-acento text-carbon">📞</span>
+        <span>
+          <span class="block font-titulo text-xl font-bold uppercase text-acento">Teléfono</span>
+          <span class="text-sm text-suave">066 616 558</span>
+        </span>
+      </a>
+      <a href="mailto:Hrmogenes168&#64;gmail.com" class="flex items-start gap-4 bg-papel p-5 transition hover:bg-fondo">
+        <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-acento text-carbon">✉️</span>
+        <span>
+          <span class="block font-titulo text-xl font-bold uppercase text-acento">Correo</span>
+          <span class="text-sm text-suave">Hrmogenes168&#64;gmail.com</span>
+        </span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===================== NOSOTROS ===================== -->
+  <section id="nosotros" class="mx-auto grid max-w-6xl gap-10 px-4 py-14 md:py-20 lg:grid-cols-2 lg:gap-14">
+    <div>
+      <h2 class="titulo-sec font-titulo text-4xl font-extrabold uppercase md:text-5xl">Quiénes <span class="text-acento">somos</span></h2>
+      <p class="mt-4 text-lg leading-relaxed text-suave">
+        Multiservicios JC El Gringo E.I.R.L. nació el 12 de julio de 2022 en Ayacucho. Somos <strong class="text-tinta">servicio técnico autorizado por Crosland Automotriz</strong>: vendemos repuestos originales Bajaj y reparamos tu mototaxi con técnicos que conocen cada modelo de Torito.
+      </p>
+      <img
+        src="images/hero/fachada.jpg"
+        alt="Fachada del taller Multiservicios JC El Gringo"
+        loading="lazy"
+        onerror="this.style.display='none'"
+        class="mt-6 w-full rounded-2xl border border-borde object-cover"
+      />
+    </div>
+    <div class="rounded-2xl border border-borde bg-papel p-5 shadow-sm md:p-7">
+      <div role="tablist" aria-label="Nuestra empresa" class="flex overflow-x-auto border-b border-borde">
+        <button type="button" (click)="pestanaActiva = 'mision'" [attr.aria-selected]="pestanaActiva === 'mision'" class="pestana min-h-[48px] flex-1 whitespace-nowrap border-b-4 px-4 font-titulo text-xl font-bold uppercase tracking-wide transition" [class.border-acento]="pestanaActiva === 'mision'" [class.border-transparent]="pestanaActiva !== 'mision'">Misión</button>
+        <button type="button" (click)="pestanaActiva = 'vision'" [attr.aria-selected]="pestanaActiva === 'vision'" class="pestana min-h-[48px] flex-1 whitespace-nowrap border-b-4 px-4 font-titulo text-xl font-bold uppercase tracking-wide transition" [class.border-acento]="pestanaActiva === 'vision'" [class.border-transparent]="pestanaActiva !== 'vision'">Visión</button>
+        <button type="button" (click)="pestanaActiva = 'objetivos'" [attr.aria-selected]="pestanaActiva === 'objetivos'" class="pestana min-h-[48px] flex-1 whitespace-nowrap border-b-4 px-4 font-titulo text-xl font-bold uppercase tracking-wide transition" [class.border-acento]="pestanaActiva === 'objetivos'" [class.border-transparent]="pestanaActiva !== 'objetivos'">Objetivos</button>
+        <button type="button" (click)="pestanaActiva = 'valores'" [attr.aria-selected]="pestanaActiva === 'valores'" class="pestana min-h-[48px] flex-1 whitespace-nowrap border-b-4 px-4 font-titulo text-xl font-bold uppercase tracking-wide transition" [class.border-acento]="pestanaActiva === 'valores'" [class.border-transparent]="pestanaActiva !== 'valores'">Valores</button>
+      </div>
+      <div class="mt-6 min-h-[200px]">
+        @if (pestanaActiva === 'mision') {
+          <p class="text-lg leading-relaxed text-suave">Superar las expectativas de nuestros clientes con repuestos de la más alta calidad y servicios técnicos de primera para el moto torito Bajaj. Ofrecemos soluciones efectivas que aseguran el óptimo funcionamiento y la larga vida útil de cada vehículo que atendemos.</p>
+        }
+        @if (pestanaActiva === 'vision') {
+          <p class="text-lg leading-relaxed text-suave">Ser reconocidos como el estándar de excelencia en repuestos y servicios técnicos para moto torito Bajaj, ampliando nuestra presencia en la región y construyendo una red de clientes fieles y satisfechos.</p>
+        }
+        @if (pestanaActiva === 'objetivos') {
+          <p class="text-lg leading-relaxed text-suave">Liderar el mercado en venta de repuestos y servicios técnicos, innovando siempre y usando tecnología de punta para diagnosticar y reparar con precisión. Ser la primera elección de los conductores que buscan confiabilidad, seguridad y rendimiento.</p>
+        }
+        @if (pestanaActiva === 'valores') {
+          <div class="grid gap-3 sm:grid-cols-2">
+            <div class="rounded-full border border-borde bg-fondo p-4"><p class="font-titulo text-xl font-bold uppercase text-acento">Calidad</p><p class="mt-1 text-sm text-suave">Compromiso con la excelencia en cada producto y servicio.</p></div>
+            <div class="rounded-full border border-borde bg-fondo p-4"><p class="font-titulo text-xl font-bold uppercase text-acento">Integridad</p><p class="mt-1 text-sm text-suave">Honestidad y transparencia en todas nuestras operaciones.</p></div>
+            <div class="rounded-full border border-borde bg-fondo p-4"><p class="font-titulo text-xl font-bold uppercase text-acento">Innovación</p><p class="mt-1 text-sm text-suave">Búsqueda continua de mejoras y nuevas soluciones.</p></div>
+            <div class="rounded-full border border-borde bg-fondo p-4"><p class="font-titulo text-xl font-bold uppercase text-acento">Pasión</p><p class="mt-1 text-sm text-suave">Amor por lo que hacemos y por los mototaxis que atendemos.</p></div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SERVICIOS ===================== -->
+  <section id="servicios" class="border-y border-borde bg-papel">
+    <div class="mx-auto max-w-6xl px-4 py-14 md:py-20">
+      <h2 class="titulo-sec font-titulo text-4xl font-extrabold uppercase md:text-5xl">Servicios del <span class="text-acento">taller</span></h2>
+      <p class="mt-2 max-w-xl text-suave">Todo para tu mototaxi en un solo lugar.</p>
+      <div class="mt-8 grid gap-4 min-[480px]:grid-cols-2 lg:grid-cols-4">
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">01</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">01</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Diagnóstico avanzado</h3>
+          <p class="mt-2 text-sm text-suave">Tecnología para identificar fallas con precisión y rapidez.</p>
+        </article>
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">02</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">02</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Reparación de motores</h3>
+          <p class="mt-2 text-sm text-suave">Reconstrucción y optimización para el máximo rendimiento.</p>
+        </article>
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">03</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">03</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Mantenimiento preventivo y correctivo</h3>
+          <p class="mt-2 text-sm text-suave">Programas completos para mantener tu mototaxi en condiciones óptimas.</p>
+        </article>
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">04</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">04</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Sistema eléctrico</h3>
+          <p class="mt-2 text-sm text-suave">Desde la batería hasta el encendido y las luces.</p>
+        </article>
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">05</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">05</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Alineamiento y balanceo de caña</h3>
+          <p class="mt-2 text-sm text-suave">Conducción suave y segura, sin vibraciones.</p>
+        </article>
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">06</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">06</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Personalización y modificaciones</h3>
+          <p class="mt-2 text-sm text-suave">Adaptamos tu mototaxi a tus necesidades y estilo.</p>
+        </article>
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">07</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">07</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Planchado, pintura y tapicería</h3>
+          <p class="mt-2 text-sm text-suave">Tu mototaxi como nuevo por dentro y por fuera.</p>
+        </article>
+        <article class="rounded-2xl border border-borde border-t-4 border-t-marca bg-fondo p-5 transition-colors hover:border-t-acento">
+          <div class="flex items-start justify-between"><span class="flex h-14 w-14 items-center justify-center rounded-2xl bg-acento font-titulo text-xl font-bold text-carbon">08</span><span class="font-titulo text-5xl font-extrabold leading-none text-borde">08</span></div>
+          <h3 class="mt-3 font-titulo text-2xl font-bold uppercase leading-tight">Asesoramiento experto</h3>
+          <p class="mt-2 text-sm text-suave">Consultas para decidir mejor el cuidado de tu unidad.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CONTACTO Y UBICACIÓN ===================== -->
+  <section id="contacto" class="border-t border-borde bg-papel">
+    <div class="mx-auto grid max-w-6xl gap-8 px-4 py-14 md:py-20 lg:grid-cols-2">
+      <div class="rounded-2xl border border-borde bg-fondo p-6 shadow-sm md:p-8">
+        <h2 class="titulo-sec font-titulo text-4xl font-extrabold uppercase md:text-5xl">Visítanos o <span class="text-acento">escríbenos</span></h2>
+        <p class="mt-4 text-suave">Av. Vía los Libertadores Pisco Tambo Nro 2881, Ayacucho, Huamanga.</p>
+        <div class="mt-6 rounded-2xl border border-borde bg-papel p-5">
+          <p class="font-titulo text-xl font-bold uppercase text-acento">Horario de atención</p>
+          <p class="mt-2 text-suave">Lunes a sábado: 8:00 a. m. – 6:00 p. m.</p>
+          <p class="text-suave">Domingo: cerrado</p>
+        </div>
+        <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+          <a href="https://wa.me/51931291489" target="_blank" rel="noopener" class="inline-flex min-h-[56px] items-center justify-center rounded-full bg-wa px-7 font-titulo text-xl font-bold uppercase text-carbon hover:bg-wa-oscuro">
+            Escribir por WhatsApp
+          </a>
+          <a href="tel:+51066616558" class="inline-flex min-h-[56px] items-center justify-center rounded-full border border-acento px-7 font-titulo text-xl font-bold uppercase text-acento hover:bg-acento hover:text-carbon">
+            Llamar ahora
+          </a>
+        </div>
+      </div>
+      <iframe
+        title="Ubicación de Multiservicios JC El Gringo en Google Maps"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        src="https://www.google.com/maps?q=Av+Via+los+Libertadores+2881+Ayacucho&output=embed"
+        class="h-80 w-full rounded-2xl border-2 border-borde shadow-lg lg:h-full lg:min-h-[360px]"
+      ></iframe>
+    </div>
+  </section>
+</main>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="tema-oscuro hero-azul border-t-4 border-acento px-4 py-10 pb-28 text-center text-white md:pb-10">
+  <p class="mb-4 flex justify-center">
+    <img
+      src="images/logos/logojc.png"
+      alt="Logo Multiservicios JC El Gringo"
+      class="h-14 w-auto object-contain"
+      onerror="this.style.display='none'"
+    />
+  </p>
+  <p class="font-titulo text-2xl font-extrabold uppercase italic">Multiservicios <span class="text-acento-claro">JC</span> El Gringo</p>
+  <p class="mt-1 text-sm tracking-widest text-white/80">REPUESTOS | SERVICIO</p>
+  <p class="mt-4 text-sm text-white/80">Servicio técnico autorizado por Crosland Automotriz · Repuestos 100% originales Bajaj</p>
+  <p class="mt-1 text-sm text-white/80">Av. Vía los Libertadores Nro 2881, Ayacucho · 066 616 558</p>
+  <p class="mt-4 flex justify-center gap-5 text-sm font-semibold">
+    <a href="https://www.youtube.com" target="_blank" rel="noopener" class="text-acento-claro hover:underline">YouTube</a>
+    <a href="https://www.tiktok.com" target="_blank" rel="noopener" class="text-acento-claro hover:underline">TikTok</a>
+    <a href="https://www.facebook.com" target="_blank" rel="noopener" class="text-acento-claro hover:underline">Facebook</a>
+  </p>
+  <p class="mt-6 text-xs text-white/65">© 2026 Multiservicios JC El Gringo E.I.R.L. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a
+  href="https://wa.me/51931291489"
+  target="_blank"
+  rel="noopener"
+  class="fixed bottom-5 right-5 z-50 inline-flex items-center gap-2 rounded-full bg-wa px-4 py-3 font-titulo text-sm font-bold uppercase text-carbon shadow-xl transition hover:bg-wa-oscuro"
+>
+  <span>WhatsApp</span>
+</a>

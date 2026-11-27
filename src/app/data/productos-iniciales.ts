@@ -1,0 +1,232 @@
+import { Producto } from '../models/producto.model';
+
+export const PRODUCTOS_INICIALES: Producto[] = [
+  {
+    id: '1',
+    nombre: 'Filtro de aceite',
+    marca: 'Bajaj',
+    categoria: 'Mantenimiento',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 12,
+    stock: 15,
+    original: true,
+    imagen: 'img/productos/filtro-aceite-bajaj.webp',
+    promocion: true,
+    precioAntes: 15
+  },
+  {
+    id: '2',
+    nombre: 'Filtro de aire',
+    marca: 'Bajaj',
+    categoria: 'Mantenimiento',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 25,
+    stock: 10,
+    original: true,
+    imagen: 'img/productos/filtro-aire-bajaj.webp'
+  },
+  {
+    id: '3',
+    nombre: 'Bujía',
+    marca: 'Bajaj',
+    categoria: 'Motor',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 12,
+    stock: 20,
+    original: true,
+    imagen: 'img/productos/bujia-bajaj.webp'
+  },
+  {
+    id: '4',
+    nombre: 'Zapatas de freno',
+    marca: 'Bajaj',
+    categoria: 'Frenos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 35,
+    stock: 8,
+    original: true,
+    imagen: 'img/productos/zapatas-freno-bajaj.webp',
+    promocion: true,
+    precioAntes: 40
+  },
+  {
+    id: '5',
+    nombre: 'Espejo retrovisor',
+    marca: 'Bajaj',
+    categoria: 'Mandos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 20,
+    stock: 0,
+    original: true,
+    imagen: 'img/productos/espejo-bajaj.webp'
+  },
+  {
+    id: '6',
+    nombre: 'Luz posterior (stop)',
+    marca: 'Bajaj',
+    categoria: 'Luces',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 45,
+    stock: 5,
+    original: true,
+    imagen: 'img/productos/luz-posterior-bajaj.webp'
+  },
+  {
+    id: '7',
+    nombre: 'Amortiguador delantero',
+    marca: 'Bajaj',
+    categoria: 'Suspensión',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 85,
+    stock: 6,
+    original: true,
+    imagen: 'img/productos/amortiguador-delantero.webp',
+    promocion: true,
+    precioAntes: 95
+  },
+  {
+    id: '8',
+    nombre: 'Amortiguador posterior',
+    marca: 'Bajaj',
+    categoria: 'Suspensión',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 70,
+    stock: 4,
+    original: true,
+    imagen: 'img/productos/amortiguador-posterior.webp'
+  },
+  {
+    id: '9',
+    nombre: 'Resorte de suspensión',
+    marca: 'Bajaj',
+    categoria: 'Suspensión',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 40,
+    stock: 9,
+    original: true,
+    imagen: 'img/productos/resorte-suspension.webp'
+  },
+  {
+    id: '10',
+    nombre: 'Kit de embrague',
+    marca: 'Bajaj',
+    categoria: 'Transmisión',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 120,
+    stock: 5,
+    original: true,
+    imagen: 'img/productos/kit-embrague.webp'
+  },
+  {
+    id: '11',
+    nombre: 'Cadena de transmisión',
+    marca: 'Bajaj',
+    categoria: 'Transmisión',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 65,
+    stock: 0,
+    original: true,
+    imagen: 'img/productos/cadena-transmision.webp'
+  },
+  {
+    id: '12',
+    nombre: 'Cable de embrague',
+    marca: 'Bajaj',
+    categoria: 'Transmisión',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 18,
+    stock: 14,
+    original: true,
+    imagen: 'img/productos/cable-embrague.webp'
+  },
+  {
+    id: '13',
+    nombre: 'Tapacubos de rueda',
+    marca: 'Bajaj',
+    categoria: 'Adornos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 30,
+    stock: 12,
+    original: true,
+    imagen: 'img/productos/tapacubos.webp'
+  },
+  {
+    id: '14',
+    nombre: 'Forro de asiento',
+    marca: 'Bajaj',
+    categoria: 'Adornos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 45,
+    stock: 9,
+    original: true,
+    imagen: 'img/productos/forro-asiento.webp'
+  },
+  {
+    id: '15',
+    nombre: 'Parrilla portaequipaje',
+    marca: 'Bajaj',
+    categoria: 'Adornos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 75,
+    stock: 3,
+    original: true,
+    imagen: 'img/productos/parrilla.webp'
+  },
+  {
+    id: '16',
+    nombre: 'Cable de acelerador',
+    marca: 'Bajaj',
+    categoria: 'Mandos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 15,
+    stock: 16,
+    original: true,
+    imagen: 'img/productos/cable-acelerador.webp'
+  },
+  {
+    id: '17',
+    nombre: 'Manija de freno',
+    marca: 'Bajaj',
+    categoria: 'Mandos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 22,
+    stock: 10,
+    original: true,
+    imagen: 'img/productos/manija-freno.webp'
+  },
+  {
+    id: '18',
+    nombre: 'Faro delantero',
+    marca: 'Bajaj',
+    categoria: 'Luces',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 95,
+    stock: 4,
+    original: true,
+    imagen: 'img/productos/faro-delantero.webp',
+    promocion: true,
+    precioAntes: 110
+  },
+  {
+    id: '19',
+    nombre: 'Kit de empaquetaduras',
+    marca: 'Bajaj',
+    categoria: 'Motor',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 55,
+    stock: 7,
+    original: true,
+    imagen: 'img/productos/kit-empaquetaduras.webp'
+  },
+  {
+    id: '20',
+    nombre: 'Cable de freno',
+    marca: 'Bajaj',
+    categoria: 'Frenos',
+    compatibilidad: 'Torito (todos los modelos)',
+    precio: 18,
+    stock: 0,
+    original: true,
+    imagen: 'img/productos/cable-freno.webp'
+  }
+];
